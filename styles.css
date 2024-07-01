@@ -1,0 +1,40 @@
+p {
+    color: blue;
+}
+
+/* Class selector */
+.highlight {
+    background-color: aqua;
+    padding: 9px;
+}
+
+/* ID selector */
+#main-title {
+    font-size: 44px;
+    font-weight:lighter;
+}
+#main-title:hover {
+    background-color: red;
+}
+.highlight:hover{
+    background-color: red;
+}
+/* Grouping selectors */
+h1,p {
+    font-family: monospace;
+}
+
+/* Attribute selector */
+a[target="_blank"] {
+    color: green;
+}
+
+/* Pseudo-class */
+a:hover {
+    text-decoration: line-through;
+}
+
+/* Pseudo-element */
+p::first-line {
+    font-weight: bold;
+}

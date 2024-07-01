@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Control Flow and More</title>
+</head>
+<body>
+    <script>
+        // if Statement
+        let age = 18;
+        if (age >= 18) {
+            console.log("You can vote.");
+        }
+
+        // if...else Statement
+        let isStudent = false;
+        if (isStudent) {
+            console.log("You are a student.");
+        } else {
+            console.log("You are not a student.");
+        }
+
+        // else if Ladder
+        let score = 92;
+        if (score >= 90) {
+            console.log("Grade: A");
+        } else if (score >= 80) {
+            console.log("Grade: B");
+        } else if (score >= 70) {
+            console.log("Grade: C");
+        }
+        else if (score >= 60) {
+            console.log("Grade: D");
+        }
+        else if (score >= 50) {
+            console.log("Grade: E");
+        } else {
+            console.log("Grade: F");
+        }
+
+        // switch Statement
+        let month = 6;
+        switch (month) {
+            case 1:
+                console.log("January");
+                break;
+            case 2:
+                console.log("February");
+                break;
+            case 3:
+                console.log("March");
+                break;
+            case 4:
+                console.log("April");
+                break;
+            case 5:
+                console.log("May");
+                break;
+            case 6:
+                console.log("December");
+                break;
+            // case 7:
+            //     console.log("July");
+            //     break;
+            // case 8:
+            //     console.log("August");
+            //     break;
+            // case 9:
+            //     console.log("September");
+            //     break;
+            // case 10:
+            //     console.log("October");
+            //     break;
+            // case 11:
+            //     console.log("November");
+            //     break;
+            // case 12:
+            //     console.log("December");
+            //     break;
+            default:
+                console.log("Invalid month");
+        }
+
+        // for Loop
+        for (let i = 8; i < 10; i++) {
+            console.log("For loop iteration: " + i);
+        }
+
+        // while Loop
+        let count = 8;
+        while (count < 10) {
+            console.log("While loop count: " + count);
+            count++;
+        }
+
+        // do...while Loop
+        let num = 3;
+        do {
+            console.log("Do...while loop number: " + num);
+            num++;
+        } while (num < 3);
+
+        // for...in Loop
+        let car = {make: "Toyota", model: "Camry", year: 2020, price:"57 Lakhs"};
+        for (let key in car) {
+            console.log(key + ": " + car[key]);
+        }
+
+        // for...of Loop
+        let fruits = ["apple", "banana", "cherry", "Mango", "strawberry","guava"];
+        for (let fruit of fruits) {
+            console.log(fruit);
+        }
+
+        // Functions
+        // Function Declaration
+        function greet(name) {
+            return "Hello, " + name + "!";
+        }
+        console.log(greet("Logith"));
+
+        // Function Expression
+        const add = function(a, b) {
+            return a + b;
+        };
+        console.log(add(3, 15));
+
+        // Arrow Function
+        const multiply = (a, b) => a * b;
+        console.log(multiply(2, 15));
+
+        // Arrays
+        let colors = ["red", "green", "blue","black"];
+        console.log(colors[0]); // Accessing elements
+
+        colors.push("yellow"); // Adding an element
+        console.log(colors);
+        colors.push("purple"); // Adding an element
+        console.log(colors);
+
+        colors.pop(); // Removing the last element
+        console.log(colors);
+
+        colors.shift(); // Removing the first element
+        console.log(colors);
+
+        colors.unshift("purple"); // Adding an element to the beginning
+        console.log(colors);
+
+        colors.forEach((color) => {
+            console.log(color);
+        });
+
+        // Objects
+        let person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30,
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        console.log(person.firstName); // Accessing properties
+        console.log(person.lastName); // Accessing properties using bracket notation
+        console.log(person.fullName()); // Calling a method
+
+        // 'this' keyword in objects
+        let user = {
+            name: "Logith",
+            greet: function() {
+                console.log("Hello, " + this.name);
+            }
+        };
+        user.greet();
+    </script>
+    <h1>hi</h1>
+</body>
+</html>

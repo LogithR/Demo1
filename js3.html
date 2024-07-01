@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing and Modifying HTML Elements</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Accessing and Modifying HTML Elements</h1>
+
+    <!-- Elements for accessing -->
+    <p id="myParagraph">Hello World!</p>
+    <p class="myClass">Paragraph 1</p>
+    <p class="myClass">Paragraph 2</p>
+    <img id="myImage" src="oldImage.png" alt="Old Image">
+
+    <!-- Elements for modifying -->
+    <div id="modifyContent">This is some content to modify.</div>
+    <p id="modifyAttribute" data-custom="original">This paragraph has a custom attribute.</p>
+    <div id="modifyStyle">This text will change style.</div>
+
+    <script>
+        // Accessing HTML Elements
+
+        // getElementById
+        let paraById = document.getElementById("myParagraph");
+        console.log("getElementById:", paraById.innerHTML); // Logs "Hello World!"
+
+        // getElementsByClassName
+        let parasByClass = document.getElementsByClassName("myClass");
+        for (let para of parasByClass) {
+            console.log("getElementsByClassName:", para.innerHTML); // Logs "Paragraph 1" and "Paragraph 2"
+        }
+
+        // getElementsByTagName
+        let parasByTag = document.getElementsByTagName("p");
+        for (let para of parasByTag) {
+            console.log("getElementsByTagName:", para.innerHTML); // Logs "Hello World!", "Paragraph 1", "Paragraph 2", and the paragraph with custom attribute
+        }
+
+        // querySelector and querySelectorAll
+        let firstParaByClass = document.querySelector(".myClass");
+        console.log("querySelector:", firstParaByClass.innerHTML); // Logs "Paragraph 1"
+
+        let allParasByClass = document.querySelectorAll(".myClass");
+        allParasByClass.forEach((para) => {
+            console.log("querySelectorAll:", para.innerHTML); // Logs "Paragraph 1" and "Paragraph 2"
+        });
+
+        // Modifying HTML Elements
+
+        // Changing innerHTML
+        let modifyContent = document.getElementById("modifyContent");
+        modifyContent.innerHTML = "logith";
+        console.log("innerHTML:", modifyContent.innerHTML); // Logs "The content has been modified!"
+
+        // Changing attributes
+        let modifyAttribute = document.getElementById("modifyAttribute");
+        modifyAttribute.setAttribute("data-custom", "logith");
+        console.log("Attribute:", modifyAttribute.getAttribute("data-custom")); // Logs "modified"
+
+        // Changing styles
+        let modifyStyle = document.getElementById("modifyStyle");
+        modifyStyle.style.color = "black";
+        modifyStyle.style.fontSize = "50px";
+        modifyStyle.style.backgroundColor="aqua" 
+        modifyStyle.classList.add("highlight");
+        console.log("Styles:", modifyStyle.style.color, modifyStyle.style.fontSize,modifyStyle.style.backgroundColor); // Logs "blue" "20px"
+    </script>
+</body>
+</html>

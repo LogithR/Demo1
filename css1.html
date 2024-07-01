@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors and Properties</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <style>
+        /* Element selector */
+        p {
+            color: blue;
+        }
+
+        /* Class selector */
+        .highlight {
+            background-color: aqua;
+        }
+
+        /* ID selector */
+        #main-title {
+            font-size: 44px;
+            font-weight:lighter;
+        }
+        .highlight:hover{
+            background-color: red;
+        }
+        /* Grouping selectors */
+        h1,p {
+            font-family: monospace;
+        }
+
+        /* Attribute selector */
+        a[target="_blank"] {
+            color: green;
+        }
+
+        /* Pseudo-class */
+        a:hover {
+            text-decoration: line-through;
+        }
+
+        /* Pseudo-element */
+        p::first-line {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="main-title" style="color: violet;">Welcome to CSS Tutorial</h1>
+    <p class="highlight">This is a paragraph with a yellow background.</p>
+    <p>Here is a <a href="#" target="_blank">link</a> that changes color when hovered over.</p>
+
+</body>
+</html>

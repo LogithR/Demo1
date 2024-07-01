@@ -1,0 +1,164 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form with Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Sample Form with Validation</h2>
+    <form id="sampleForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <span class="error" id="nameError"></span>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="emailError"></span>
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="6">
+        <span class="error" id="passwordError"></span>
+        <br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <span class="error" id="confirmPasswordError"></span>
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required min="18" max="100">
+        <span class="error" id="ageError"></span>
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('sampleForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission for validation
+
+            let isValid = true;
+
+            // Clear previous error messages
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            document.getElementById('confirmPasswordError').textContent = '';
+            document.getElementById('ageError').textContent = '';
+
+            // Validate Name
+            const name = document.getElementById('name').value;
+            if (name.trim() === '') {
+                document.getElementById('nameError').textContent = 'Name is required.';
+                isValid = false;
+            }
+
+            // Validate Email
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Invalid email format.';
+                isValid = false;
+            }
+
+            // Validate Password
+            const password = document.getElementById('password').value;
+            if (password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters.';
+                isValid = false;
+            }
+
+            // Validate Confirm Password
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (confirmPassword !== password) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match.';
+                isValid = false;
+            }
+
+            // Validate Age
+            const age = parseInt(document.getElementById('age').value, 10);
+            if (isNaN(age) || age < 18 || age > 100) {
+                document.getElementById('ageError').textContent = 'Age must be between 18 and 100.';
+                isValid = false;
+            }
+
+            // If the form is valid, submit the form
+            if (isValid) {
+                alert('Form submitted successfully!');
+                document.getElementById('sampleForm').submit();
+            }
+        });
+    </script>
+</body>
+</html>  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events and Event Handling</title>
+</head>
+<body>
+    <h1>Events and Event Handling</h1>
+
+    <!-- Elements for events -->
+    <button id="clickBtn">Click Me</button>
+    <input type="text" id="textInput" placeholder="Type something...">
+    <p id="hoverPara">Hover over me!</p>
+    <button id="inlineBtn" onclick="alert('Inline Button clicked!')">Inline Event</button>
+    
+    <!-- Example for Event Listener -->
+    <button id="listenerBtn">Event Listener</button>
+
+    <script>
+        // Introduction to Events
+
+        // Common Events
+        let clickBtn = document.getElementById("clickBtn");
+        let textInput = document.getElementById("textInput");
+        let hoverPara = document.getElementById("hoverPara");
+
+        clickBtn.onclick = function() {
+            console.log("Button clicked!");
+        };
+        // console.log(clickBtn);
+        // console.warn(clickBtn);
+        // console.info(clickBtn);
+        // console.debug(clickBtn);
+        // console.error(clickBtn);
+        
+        textInput.onkeyup = function() {
+            console.log("Key up event! Value:", textInput.value);
+        };
+
+        hoverPara.onmouseover = function() {
+            console.log("Mouse over event!");
+        };
+
+        // Inline Event Handling
+        // <button onclick="alert('Button clicked!')">Click Me</button> // Already in HTML
+
+        // Event Listeners
+        let listenerBtn = document.getElementById("listenerBtn");
+
+        function logith() {
+            alert("Logith had clicked!");
+        }
+
+        listenerBtn.addEventListener("click", logith);
+
+        // Removing Event Listeners
+        // listenerBtn.removeEventListener("click", handleClick);
+    </script>
+</body>
+</html>
